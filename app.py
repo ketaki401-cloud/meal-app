@@ -88,8 +88,7 @@ selection = st.session_state.selection
 selection = st.session_state.selection
 
 
-# Logic to display choices
-selection = None
+
 if k_pin: selection = "Konkan 🌊"
 elif v_pin: selection = "Vidarbha 🔥"
 elif kh_pin: selection = "Khandesh 🥜"
