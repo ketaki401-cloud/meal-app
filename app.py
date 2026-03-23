@@ -10,7 +10,7 @@ st.markdown("""
     .stButton>button { width: 100%; border-radius: 12px; height: 3em; background-color: #E67E22; color: white; font-weight: bold; }
     .recipe-card { padding: 15px; border: 1px solid #ddd; border-radius: 10px; background-color: white; margin-bottom: 10px; }
     </style>
-    """, unsafe_content_type=True)
+    """, unsafe_allow_html=True)
 
 st.title("🗺️ Maharashtra Regional AI Meal Planner")
 st.write("Click a region pin to discover local refreshments, meals, and sweets!")
