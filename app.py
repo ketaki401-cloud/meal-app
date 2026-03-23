@@ -5,6 +5,9 @@ import google.generativeai as genai
 # Setup the AI Chef
 genai.configure(api_key="AIzaSyBmtRnRiyFKvaNJyGiwCC9WHJKtPWDi4nE")
 model = genai.GenerativeModel('gemini-1.5-flash')
+if "selection" not in st.session_state:
+    st.session_state.selection = None
+
 
 def get_ai_recipe(dish_name):
       prompt = f""" 
@@ -76,6 +79,14 @@ with col1: k_pin = st.button("📍 Konkan")
 with col2: v_pin = st.button("📍 Vidarbha")
 with col3: kh_pin = st.button("📍 Khandesh")
 with col4: w_pin = st.button("📍 Western MS")
+if k_pin: st.session_state.selection = "Konkan 🌊"
+elif v_pin: st.session_state.selection = "Vidarbha 🔥"
+elif kh_pin: st.session_state.selection = "Khandesh 🥜"
+elif w_pin: st.session_state.selection = "Western MS 🌾"
+
+# Now, we pull the value out of memory to use for the rest of the app
+selection = st.session_state.selection
+
 
 # Logic to display choices
 selection = None
