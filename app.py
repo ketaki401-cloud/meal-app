@@ -4,7 +4,7 @@ import google.generativeai as genai
 
 # Setup the AI Chef
 genai.configure(api_key="AIzaSyBmtRnRiyFKvaNJyGiwCC9WHJKtPWDi4nE")
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-1.5-flash-latest')
 if "selection" not in st.session_state:
     st.session_state.selection = None
 
