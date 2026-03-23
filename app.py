@@ -10,7 +10,8 @@ if "selection" not in st.session_state:
 
 
 def get_ai_recipe(dish_name):
-      prompt = f""" 
+         
+     prompt=f"""
         You are a friendly Maharashtrian chef who loves sharing culinary secrets.
         Write a traditional recipe for {dish_name} with a 'foodie' vibe.
         Structure the response with these exact headers:
@@ -29,8 +30,8 @@ def get_ai_recipe(dish_name):
         """
 
 
-        response = model.generate_content(prompt)    
-        return response.text
+     response = model.generate_content(prompt)    
+     return response.text
 
 # Setup the page look
 st.set_page_config(page_title="Maharashtra AI Meal Planner", layout="wide")
