@@ -35,8 +35,8 @@ st.set_page_config(page_title="Maharashtra AI Meal Planner", layout="wide")
 # Custom Styling for an "Attractive" Look    
 st.markdown("""   
 <style>
-    .main { background-color: #FFF9F5; }
-    .stButton>button { width: 100%; border-radius: 12px; height: 3em; background-color: #E67E22; color: white; font-weight: bold; }
+    .main {{ background-color: #FFF9F5; }}
+    .stButton>button{{ width: 100%; border-radius: 12px; height: 3em; background-color: #E67E22; color: white; font-weight: bold; }}
     .recipe-card { padding: 15px; border: 1px solid #ddd; border-radius: 10px; background-color: white; margin-bottom: 10px; }
     </style>
     """, unsafe_allow_html=True)
