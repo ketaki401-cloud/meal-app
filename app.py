@@ -83,7 +83,7 @@ if k_pin: st.session_state.selection = "Konkan 🌊"
 elif v_pin: st.session_state.selection = "Vidarbha 🔥"
 elif kh_pin: st.session_state.selection = "Khandesh 🥜"
 elif w_pin: st.session_state.selection = "Western MS 🌾"
-
+selection = st.session_state.selection
 # Now, we pull the value out of memory to use for the rest of the app
 selection = st.session_state.selection
 
