@@ -1,0 +1,72 @@
+import streamlit as st
+
+# Setup the page look
+st.set_page_config(page_title="Maharashtra AI Meal Planner", layout="wide")
+
+# Custom Styling for an "Attractive" Look
+st.markdown("""
+    <style>
+    .main { background-color: #FFF9F5; }
+    .stButton>button { width: 100%; border-radius: 12px; height: 3em; background-color: #E67E22; color: white; font-weight: bold; }
+    .recipe-card { padding: 15px; border: 1px solid #ddd; border-radius: 10px; background-color: white; margin-bottom: 10px; }
+    </style>
+    """, unsafe_content_type=True)
+
+st.title("🗺️ Maharashtra Regional AI Meal Planner")
+st.write("Click a region pin to discover local refreshments, meals, and sweets!")
+
+# Your Regional Data
+data = {
+    "Konkan 🌊": {
+        "Refreshment": "🥤 Solkadhi (🌿 Vegan | 10m) - *Tip: Use Cranberry + Lime if Kokum is missing.*",
+        "Main Dish": "🥘 Malvani Fish Curry (🔴 Non-Veg | 40m)",
+        "Sweet": "🍮 Ukadiche Modak (🟢 Veg | 45m)",
+        "Shelf-Life": "📦 Phanas Poli (🌿 Vegan | 20m)"
+    },
+    "Vidarbha 🔥": {
+        "Refreshment": "🥤 Mattha (🟢 Veg | 5m) - *Tip: Use Greek Yogurt thinned with water.*",
+        "Main Dish": "🥘 Saoji Chicken (🔴 Non-Veg | 50m)",
+        "Sweet": "🍮 Santra Barfi (🟢 Veg | 20m)",
+        "Shelf-Life": "📦 Mirchi Locha (🌿 Vegan | 15m)"
+    },
+    "Khandesh 🥜": {
+        "Refreshment": "🥤 Khandeshi Chai (🟢 Veg | 10m)",
+        "Main Dish": "🥘 Shev Bhaji (🟢 Veg | 25m) - *Tip: Use spicy pretzels for crunch abroad!*",
+        "Sweet": "🍮 Mande (🟢 Veg | 60m)",
+        "Shelf-Life": "📦 Bibadi (🌿 Vegan | 30m)"
+    },
+    "Western MS 🌾": {
+        "Refreshment": "🥤 Piyush (🟢 Veg | 10m)",
+        "Main Dish": "🥘 Misal Pav (🟢 Veg | 35m) - *Tip: Use Brown Lentils if Moth beans aren't found.*",
+        "Sweet": "🍮 Puran Poli (🟢 Veg | 50m)",
+        "Shelf-Life": "📦 Bakarwadi (🟢 Veg | 40m)"
+    }
+}
+
+# Regional Pins (Interactive Buttons)
+col1, col2, col3, col4 = st.columns(4)
+with col1: k_pin = st.button("📍 Konkan")
+with col2: v_pin = st.button("📍 Vidarbha")
+with col3: kh_pin = st.button("📍 Khandesh")
+with col4: w_pin = st.button("📍 Western MS")
+
+# Logic to display choices
+selection = None
+if k_pin: selection = "Konkan 🌊"
+elif v_pin: selection = "Vidarbha 🔥"
+elif kh_pin: selection = "Khandesh 🥜"
+elif w_pin: selection = "Western MS 🌾"
+
+if selection:
+    st.divider()
+    st.header(f"Results for {selection}")
+    items = data[selection]
+    
+    # Create 4 columns for the 4 categories
+    c1, c2, c3, c4 = st.columns(4)
+    with c1: st.info(f"**Refreshment**\n\n{items['Refreshment']}")
+    with c2: st.success(f"**Main Dish**\n\n{items['Main Dish']}")
+    with c3: st.warning(f"**Sweet Dish**\n\n{items['Sweet']}")
+    with c4: st.error(f"**Long-Shelf**\n\n{items['Shelf-Life']}")
+else:
+    st.info("Tap a location pin on the map (the buttons above) to start exploring!")
