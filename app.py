@@ -1,4 +1,33 @@
 import streamlit as st
+import google.generativeai as genai
+
+
+# Setup the AI Chef
+genai.configure(api_key="AIzaSyBmtRnRiyFKvaNJyGiwCC9WHJKtPWDi4nE")
+model = genai.GenerativeModel('gemini-1.5-flash')
+
+def get_ai_recipe(dish_name):
+      prompt = f"""
+        You are a friendly Maharashtrian chef who loves sharing culinary secrets.
+        Write a traditional recipe for {dish_name} with a 'foodie' vibe.
+        Structure the response with these exact headers:
+        
+        ### 🌟 Why We Love It
+        (A one-sentence 'foodie' description of the dish)
+        
+        ### 🛒 The Essentials
+        (List of ingredients with measurements)
+        
+        ### 👨‍🍳 The Method
+        (3-4 simple cooking steps)
+        
+        ### 🤫 The Secret Tip
+        (One specific pro-tip or 'Aaji's secret' to make it extra authentic)
+        """
+
+
+    response = model.generate_content(prompt)
+    return response.text
 
 # Setup the page look
 st.set_page_config(page_title="Maharashtra AI Meal Planner", layout="wide")
@@ -64,9 +93,35 @@ if selection:
     
     # Create 4 columns for the 4 categories
     c1, c2, c3, c4 = st.columns(4)
-    with c1: st.info(f"**Refreshment**\n\n{items['Refreshment']}")
-    with c2: st.success(f"**Main Dish**\n\n{items['Main Dish']}")
-    with c3: st.warning(f"**Sweet Dish**\n\n{items['Sweet']}")
-    with c4: st.error(f"**Long-Shelf**\n\n{items['Shelf-Life']}")
+     with c1:
+            st.info(f"**Refreshment**\n\n{items['Refreshment']}")
+            with st.expander("Get Recipe ✨"):
+                if st.button("Generate", key=f"btn_{selection}_ref"):
+                    with st.spinner("Writing..."):
+                        st.write(get_ai_recipe(items['Refreshment']))
+
+        with c2:
+            st.success(f"**Main Dish**\n\n{items['Main Dish']}")
+            with st.expander("Get Recipe ✨"):
+                if st.button("Generate", key=f"btn_{selection}_main"):
+                    with st.spinner("Writing..."):
+                        st.write(get_ai_recipe(items['Main Dish']))
+
+        with c3:
+            st.warning(f"**Sweet Dish**\n\n{items['Sweet']}")
+            with st.expander("Get Recipe ✨"):
+                if st.button("Generate", key=f"btn_{selection}_sweet"):
+                    with st.spinner("Writing..."):
+                        st.write(get_ai_recipe(items['Sweet']))
+
+        with c4:
+            st.error(f"**Long-Shelf**\n\n{items['Shelf-Life']}")
+            with st.expander("Get Recipe ✨"):
+                if st.button("Generate", key=f"btn_{selection}_shelf"):
+                    with st.spinner("Writing..."):
+                        st.write(get_ai_recipe(items['Shelf-Life']))
+
+
+
 else:
     st.info("Tap a location pin on the map (the buttons above) to start exploring!")
