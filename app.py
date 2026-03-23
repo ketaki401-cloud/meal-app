@@ -7,7 +7,7 @@ genai.configure(api_key="AIzaSyBmtRnRiyFKvaNJyGiwCC9WHJKtPWDi4nE")
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 def get_ai_recipe(dish_name):
-      prompt = f"""
+      prompt = f""" 
         You are a friendly Maharashtrian chef who loves sharing culinary secrets.
         Write a traditional recipe for {dish_name} with a 'foodie' vibe.
         Structure the response with these exact headers:
