@@ -33,9 +33,9 @@ def get_ai_recipe(dish_name):
 st.set_page_config(page_title="Maharashtra AI Meal Planner", layout="wide")
 
 # Custom Styling for an "Attractive" Look    
-st.markdown(f"""
+st.markdown("""
 <style>
-.main {{ background-color: #FFF9F5; }}
+.main { background-color: #FFF9F5; }
 </style>
 """, unsafe_allow_html=True)
 
