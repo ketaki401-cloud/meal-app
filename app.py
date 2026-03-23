@@ -24,7 +24,7 @@ def get_ai_recipe(dish_name):
         ### 🤫 The Secret Tip
         (One specific pro-tip or 'Aaji's secret' to make it extra authentic)
         """
-"""
+
 
       response = model.generate_content(prompt)
       return response.text
@@ -37,7 +37,7 @@ st.markdown("""
 <style>
 .main { background-color: #FFF9F5; }
 </style>
-""", unsafe_allow_html=True)
+""",unsafe_allow_html=True)
 
 st.title("🗺️ Maharashtra Regional AI Meal Planner")
 st.write("Click a region pin to discover local refreshments, meals, and sweets!")
