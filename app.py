@@ -33,13 +33,13 @@ def get_ai_recipe(dish_name):
 st.set_page_config(page_title="Maharashtra AI Meal Planner", layout="wide")
 
 # Custom Styling for an "Attractive" Look    
-st.markdown("""   
+st.markdown(f"""
 <style>
     .main {{ background-color: #FFF9F5; }}
-    .stButton>button{{ width: 100%; border-radius: 12px; height: 3em; background-color: #E67E22; color: white; font-weight: bold; }}
-    .recipe-card { padding: 15px; border: 1px solid #ddd; border-radius: 10px; background-color: white; margin-bottom: 10px; }
-    </style>
-    """, unsafe_allow_html=True)
+    .recipe-card {{ padding: 15px; border: 1px solid #ddd; border-radius: 10px; }}
+    .stButton>button {{ width: 100%; border-radius: 12px; height: 3em; background-color: #E67E22; color: white; }}
+</style>
+""", unsafe_allow_html=True
 
 st.title("🗺️ Maharashtra Regional AI Meal Planner")
 st.write("Click a region pin to discover local refreshments, meals, and sweets!")
