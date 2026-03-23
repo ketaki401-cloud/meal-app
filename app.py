@@ -92,32 +92,32 @@ if selection:
     # Create 4 columns for the 4 categories
     c1, c2, c3, c4 = st.columns(4)
      with c1:
-            st.info(f"**Refreshment**\n\n{items['Refreshment']}")
-            with st.expander("Get Recipe ✨"):
-                if st.button("Generate", key=f"btn_{selection}_ref"):
-                    with st.spinner("Writing..."):
-                        st.write(get_ai_recipe(items['Refreshment']))
+     st.info(f"**Refreshment**\n\n{items['Refreshment']}")
+     with st.expander("Get Recipe ✨"):
+     if st.button("Generate", key=f"btn_{selection}_ref"):
+     with st.spinner("Writing..."):
+     st.write(get_ai_recipe(items['Refreshment']))
 
-        with c2:
-            st.success(f"**Main Dish**\n\n{items['Main Dish']}")
-            with st.expander("Get Recipe ✨"):
-                if st.button("Generate", key=f"btn_{selection}_main"):
-                    with st.spinner("Writing..."):
-                        st.write(get_ai_recipe(items['Main Dish']))
+     with c2:
+     st.success(f"**Main Dish**\n\n{items['Main Dish']}")
+     with st.expander("Get Recipe ✨"):
+     if st.button("Generate", key=f"btn_{selection}_main"):
+     with st.spinner("Writing..."):
+     st.write(get_ai_recipe(items['Main Dish']))
 
-        with c3:
-            st.warning(f"**Sweet Dish**\n\n{items['Sweet']}")
-            with st.expander("Get Recipe ✨"):
-                if st.button("Generate", key=f"btn_{selection}_sweet"):
-                    with st.spinner("Writing..."):
-                        st.write(get_ai_recipe(items['Sweet']))
+     with c3:
+     st.warning(f"**Sweet Dish**\n\n{items['Sweet']}")
+     with st.expander("Get Recipe ✨"):
+     if st.button("Generate", key=f"btn_{selection}_sweet"):
+     with st.spinner("Writing..."):
+     st.write(get_ai_recipe(items['Sweet']))
 
-        with c4:
-            st.error(f"**Long-Shelf**\n\n{items['Shelf-Life']}")
-            with st.expander("Get Recipe ✨"):
-                if st.button("Generate", key=f"btn_{selection}_shelf"):
-                    with st.spinner("Writing..."):
-                        st.write(get_ai_recipe(items['Shelf-Life']))
+     with c4:
+     st.error(f"**Long-Shelf**\n\n{items['Shelf-Life']}")
+     with st.expander("Get Recipe ✨"):
+     if st.button("Generate", key=f"btn_{selection}_shelf"):
+     with st.spinner("Writing..."):
+     st.write(get_ai_recipe(items['Shelf-Life']))
 
 
 
