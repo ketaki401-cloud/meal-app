@@ -29,8 +29,8 @@ def get_ai_recipe(dish_name):
         """
 
 
-     response = model.generate_content(prompt)
-     return response.text
+      response = model.generate_content(prompt)
+      return response.text
 
 # Setup the page look
 st.set_page_config(page_title="Maharashtra AI Meal Planner", layout="wide")
