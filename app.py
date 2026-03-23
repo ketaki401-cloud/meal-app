@@ -87,13 +87,6 @@ selection = st.session_state.selection
 # Now, we pull the value out of memory to use for the rest of the app
 selection = st.session_state.selection
 
-
-
-if k_pin: selection = "Konkan 🌊"
-elif v_pin: selection = "Vidarbha 🔥"
-elif kh_pin: selection = "Khandesh 🥜"
-elif w_pin: selection = "Western MS 🌾"
-
 if selection:
     st.divider()
     st.header(f"Results for {selection}")
