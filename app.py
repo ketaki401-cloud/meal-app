@@ -24,10 +24,10 @@ def get_ai_recipe(dish_name):
         ### 🤫 The Secret Tip
         (One specific pro-tip or 'Aaji's secret' to make it extra authentic)
         """
+"""
 
-
-    response = model.generate_content(prompt)
-    return response.text
+      response = model.generate_content(prompt)
+      return response.text
 
 # Setup the page look
 st.set_page_config(page_title="Maharashtra AI Meal Planner", layout="wide")
