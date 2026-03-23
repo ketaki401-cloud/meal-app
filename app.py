@@ -89,8 +89,8 @@ if selection:
     st.header(f"Results for {selection}")
     items = data[selection]
     
-    # Create 4 columns for the 4 categories
-    c1, c2, c3, c4 = st.columns(4)
+     # Create 4 columns for the 4 categories
+     c1, c2, c3, c4 = st.columns(4)
      with c1:
      st.info(f"**Refreshment**\n\n{items['Refreshment']}")
      with st.expander("Get Recipe ✨"):
